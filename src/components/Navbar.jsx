@@ -70,19 +70,19 @@ const Navbar = () => {
           <div className="w-full mt-2 pb-2 transition-all duration-300">
             <div className="flex w-full gap-4">
               <DropdownCard
-                to="/services/ui-ux"
+                to="/design" 
                 title="Design."
                 description={`Handcraft the\nuser experience.`}
                 bgColor="bg-yellow-100"
               />
               <DropdownCard
-                to="/services/web"
+                to="/technology"
                 title="Technology."
                 description={`Leverage the\npower of code.`}
                 bgColor="bg-red-100"
               />
               <DropdownCard
-                to="/services/mobile"
+                to="/marketing"
                 title="Marketing."
                 description={`Creative strategies\nfor brands.`}
                 bgColor="bg-green-100"
@@ -96,19 +96,19 @@ const Navbar = () => {
           <div className="w-full mt-2 pb-2 transition-all duration-300">
             <div className="flex w-full gap-4">
               <DropdownCard
-                to="/about/company"
+                to="/aboutus"
                 title="About Us."
                 description={`We are super-efficient\nyet humble to serve you.`}
                 bgColor="bg-yellow-100"
               />
               <DropdownCard
-                to="/about/team"
+                to="/team" 
                 title="Team."
                 description={`We are proud of our\nexperienced and accomplished team.`}
                 bgColor="bg-red-100"
               />
               <DropdownCard
-                to="/about/careers"
+                to="/career"
                 title="Careers."
                 description={`Can you offer\nsuch experience?`}
                 bgColor="bg-green-100"
