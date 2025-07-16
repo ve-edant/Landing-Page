@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { CgArrowLongRight } from "react-icons/cg";
 
-const DropdownCard = ({ to, title, description, bgColor = "bg-yellow-100" }) => {
+const DropdownCard = ({ to, setIsSidebarOpen, title, description, bgColor = "bg-yellow-100" }) => {
   return (
     <Link
       to={to}
+      onClick={() => setIsSidebarOpen(false)}
       className={`flex-1 py-3 px-4 border ${bgColor} transition rounded-lg relative h-full`}
     >
       <div className="flex flex-col justify-between h-full pr-10">

@@ -1,5 +1,6 @@
 import React from "react";
 import ClientSection from "../components/ClientSection";
+import HomePageSection2 from "../sections/HomePageSection2";
 
 const Home = () => {
   return (
@@ -18,7 +19,7 @@ const Home = () => {
             "radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%)",
         }}
       />
-      <div className=" relative max-w-screen-xl z-10 mx-auto md:mx-32 flex flex-col md:flex-row items-center justify-between px-4 py-0 md:py-6 gap-10">
+      <div className=" relative max-w-screen-xl z-10 mx-auto md:mx-32 flex flex-col md:flex-row items-center justify-between px-4 py-3 md:py-6 gap-10">
         {/* Left: Animation Placeholder */}
         <div
           id="animation"
@@ -45,6 +46,7 @@ const Home = () => {
         </div>
       </div>
       <ClientSection />
+      <HomePageSection2 />
     </div>
   );
 };
