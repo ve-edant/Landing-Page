@@ -1,2 +1,6 @@
 @import "tailwindcss";
 
+.fade-in-left {
+  opacity: 1 !important;
+  transform: translateX(0px) !important;
+}

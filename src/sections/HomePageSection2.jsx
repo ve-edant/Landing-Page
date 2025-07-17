@@ -1,93 +1,126 @@
-import { useInView } from "react-intersection-observer";
+"use client";
 
-const variants = {
-  hidden: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0 },
-};
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import React, { useRef } from "react";
 
-const SectionBlock = ({ title, items }) => {
-  const { ref, inView } = useInView({
-    triggerOnce: false,
-    threshold: 0.5,
-  });
-
-  return (
-    <div ref={ref} className="relative py-8">
-      <h2
-        className={`text-3xl font-bold sticky top-0 z-20 bg-white py-4 ${
-          inView ? "border-b border-black" : ""
-        }`}
-      >
-        {title}
-      </h2>
-
-      <motion.div
-        variants={variants}
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-        transition={{ duration: 0.5 }}
-        className="mt-4 space-y-2"
-      >
-        {inView &&
-          items.map((item) => (
-            <motion.div key={item} className="text-lg pl-4">
-              {item}
-            </motion.div>
-          ))}
-      </motion.div>
-    </div>
-  );
-};
+gsap.registerPlugin(ScrollTrigger);
 
 const HomePageSection2 = () => {
+  const designPointsRef = useRef(null);
+  const techPointsRef = useRef(null);
+  const marketingPointsRef = useRef(null);
+
+  useGSAP(() => {
+    // Design Animation
+    gsap.from(designPointsRef.current.children, {
+      x: -50,
+      opacity: 0,
+      duration: 1.5,
+      stagger: 0.3,
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: designPointsRef.current,
+        start: "top 70%",
+        end: "bottom 50%",
+        scrub: true,
+        // markers: true,
+      },
+    });
+
+    // Technology Animation
+    gsap.from(techPointsRef.current.children, {
+      x: -50,
+      opacity: 0,
+      duration: 1.5,
+      stagger: 0.3,
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: techPointsRef.current,
+        start: "top 70%",
+        end: "bottom 50%",
+        scrub: true,
+        // markers: true,
+      },
+    });
+
+    // Marketing Animation
+    gsap.from(marketingPointsRef.current.children, {
+      x: -50,
+      opacity: 0,
+      duration: 1.5,
+      stagger: 0.3,
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: marketingPointsRef.current,
+        start: "top 70%",
+        end: "bottom 50%",
+        scrub: true,
+        // markers: true,
+      },
+    });
+  }, []);
+
   return (
-    <section className="max-w-screen-xl mx-auto px-4 md:px-0 py-8">
-      <div className="md:mx-32 w-full">
-        <p className="text-lg md:text-xl mb-4">
-          We are a global creative agency that combines design expertise with
-          technology and intelligence.
-        </p>
+    <div className="w-full px-4 md:px-32 min-h-screen flex flex-col md:flex-row gap-0 items-stretch">
+      {/* Left Section */}
+      <div className="w-full md:w-1/2 px-4 md:pl-[150px] py-12 bg-red-300 flex flex-col gap-12">
+        {/* Design */}
+        <div id="designSection" className="w-full flex flex-col gap-4">
+          <div id="designTitle" className="text-5xl font-semibold">
+            Design
+          </div>
+          <div ref={designPointsRef} className="flex flex-col gap-2">
+            <div>UI Design</div>
+            <div>UX Design</div>
+            <div>UX Consultancy</div>
+            <div>Design System</div>
+            <div>Animation</div>
+            <div>Illustrations</div>
+          </div>
+        </div>
+
+        {/* Technology */}
+        <div className=" flex flex-col gap-4">
+          <div id="techTitle" className="text-5xl font-semibold">
+            Technology
+          </div>
+          <div ref={techPointsRef} className="flex flex-col gap-2">
+            <div>Web Development</div>
+            <div>Softwares</div>
+            <div>Mobile Apps</div>
+            <div>Web Apps</div>
+            <div>Front-end</div>
+            <div>Back-end</div>
+          </div>
+        </div>
+
+        {/* Marketing */}
+        <div className=" flex flex-col gap-4">
+          <div id="marketingTitle" className="text-5xl font-semibold">
+            Marketing
+          </div>
+          <div ref={marketingPointsRef} className="flex flex-col gap-2">
+            <div>Branding</div>
+            <div>Brand Name</div>
+            <div>Brand Guidelines</div>
+            <div>Strategy</div>
+            <div>Digital Marketing</div>
+            <div>S.E.O.</div>
+          </div>
+        </div>
       </div>
 
-      <div className="mx-4 md:mx-48 h-[10vh] md:h-[100px] bg-yellow-100 flex items-center justify-center rounded-lg">
-        <span className="text-xl font-semibold text-gray-600">
-          [ Animation Here ]
-        </span>
+      {/* Right Section */}
+      <div className="w-full md:w-1/2 flex items-center justify-center bg-gray-100 min-h-[300px]">
+        <div className="w-full h-full bg-gray-100 flex items-center justify-center">
+          <div className="text-2xl font-bold text-center">
+            Different animation for different titles
+          </div>
+        </div>
       </div>
-
-      <div className="mt-10">
-        <SectionBlock
-          title="Design"
-          items={[
-            "UI Design",
-            "UX Design",
-            "UX Consultancy",
-            "Design System",
-            "Animation",
-            "Illustrations",
-          ]}
-        />
-        <SectionBlock
-          title="Technology"
-          items={[
-            "Web Development",
-            "Mobile Development",
-            "DevOps",
-            "API Integrations",
-            "CMS & Headless CMS",
-          ]}
-        />
-        <SectionBlock
-          title="Marketing"
-          items={[
-            "SEO Strategy",
-            "Performance Marketing",
-            "Brand Positioning",
-            "Content Marketing",
-          ]}
-        />
-      </div>
-    </section>
+    </div>
   );
 };
 
