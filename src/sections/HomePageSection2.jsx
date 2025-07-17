@@ -3,145 +3,159 @@
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import SpinnerComponent from "../components/spinnerComponent";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Section3 = () => {
   const containerRef = useRef(null);
   const designPointsRef = useRef(null);
+  const designBulletsRef = useRef(null);
+  const copiesRef = useRef(null);
   const techPointsRef = useRef(null);
   const marketingPointsRef = useRef(null);
-  const rightRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const totalScroll = "200%"; // px scroll for 3 boxes (adjust if needed)
-
-      // Animate Box 1 (bottom layer)
-      gsap.from(designPointsRef.current.children, {
-        x: -50,
-        opacity: 0,
-        duration: 1.5,
-        stagger: 0.3,
-        ease: "power1.out",
+      // Timeline 1: Intro — reveals bullets and pins
+      const tlIntro = gsap.timeline({
         scrollTrigger: {
-          trigger: designPointsRef.current,
-          start: "top 70%",
-          end: "bottom 50%",
+          trigger: containerRef.current,
+          start: "top top",
+          end: "+=200%",
+          toggleActions: "play none none reverse",
+          pin: true,
+          markers: true,
+        },
+      });
+
+      tlIntro
+        .to(copiesRef.current, {
+          y: 50,
+          opacity: 0,
+          duration: 0.4,
+          ease: "power1.out",
+        })
+        .set(copiesRef.current, { display: "none" })
+        .set("#bullet", { display: "flex" })
+        .from(designBulletsRef.current.children, {
+          opacity: 0,
+          x: -50,
+          stagger: 0.05,
+          duration: 0.2,
+          ease: "power1.out",
+        });
+
+      // Timeline 2: Box 2 scroll motion
+      gsap.to(techPointsRef.current, {
+        y: 0,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: "+=100%",
           scrub: true,
           markers: true,
         },
       });
 
-      // Technology Animation
-      gsap.from(techPointsRef.current.children, {
-        x: -50,
-        opacity: 0,
-        duration: 1.5,
-        stagger: 0.3,
-        ease: "power1.out",
+      // Timeline 3: Box 3 scroll motion
+      gsap.to(marketingPointsRef.current, {
+        y: 0,
+        ease: "power2.out",
         scrollTrigger: {
-          trigger: techPointsRef.current,
-          start: "top 70%",
-          end: "bottom 50%",
+          trigger: containerRef.current,
+          start: "top top",
+          end: "+=200%", // start after box2 finishes
           scrub: true,
           markers: true,
         },
       });
-
-      // Marketing Animation
-      gsap.from(marketingPointsRef.current.children, {
-        x: -50,
-        opacity: 0,
-        duration: 1.5,
-        stagger: 0.3,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: marketingPointsRef.current,
-          start: "top 70%",
-          end: "bottom 50%",
-          scrub: true,
-          markers: true,
-        },
-      });
-
-      // Pin Right Side
-      ScrollTrigger.create({
-        trigger: containerRef.current,
-        start: "top top",
-        end: `+=${totalScroll}`,
-        pin: rightRef.current,
-        scrub: true,
-        markers: true, // Optional: for debugging
-      });
-    }, containerRef);
+    });
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <section
-      ref={containerRef}
-      className="w-full h-[300vh] flex flex-col md:flex-row bg-white"
-    >
-      {/* Left Section */}
-      <div className="w-full md:w-1/2 sticky top-0">
-        <div className="relative w-full flex flex-col gap-4 justify-start">
-          {/* Box 1 */}
-          <div id="designSection" className="h-[100vh] w-full flex flex-col gap-4 ml-40 justify-center items-center">
-            <div id="designTitle" className="text-5xl font-semibold">
-              Design
-            </div>
-            <div ref={designPointsRef} className="flex flex-col gap-2">
-              <div>UI Design</div>
-              <div>UX Design</div>
-              <div>UX Consultancy</div>
-              <div>Design System</div>
-              <div>Animation</div>
-              <div>Illustrations</div>
-            </div>
+    <div ref={containerRef} id="section3" className="flex h-[100vh]">
+      {/* Left Side: 3 Boxes */}
+      <div className="flex flex-col w-full md:w-1/2 justify-center px-10 py-20 gap-6 flex-1">
+        <div
+          ref={designPointsRef}
+          id="box1"
+          className="flex flex-col ml-20"
+        >
+          <h2 className="text-4xl font-bold mb-4">Design</h2>
+          <div
+            ref={designBulletsRef}
+            id="bullet"
+            className="hidden flex-col gap-2"
+          >
+            <div>UI Design</div>
+            <div>UX Design</div>
+            <div>UX Consultancy</div>
+            <div>Design System</div>
+            <div>Animation</div>
+            <div>Illustrations</div>
           </div>
-
-          {/* Technology */}
-          <div className="h-[100vh] w-full flex flex-col gap-4 ml-40 justify-center items-center">
-            <div id="techTitle" className="text-5xl font-semibold">
-              Technology
-            </div>
-            <div ref={techPointsRef} className="flex flex-col gap-2">
-              <div>Web Development</div>
-              <div>Softwares</div>
-              <div>Mobile Apps</div>
-              <div>Web Apps</div>
-              <div>Front-end</div>
-              <div>Back-end</div>
-            </div>
+          <div className="flex-1 flex md:hidden items-start justify-center relative pt-2">
+            <SpinnerComponent />
           </div>
-
-          {/* Marketing */}
-          <div className="h-[100vh] w-full flex flex-col gap-4 ml-40 justify-center items-center">
-            <div id="marketingTitle" className="text-5xl font-semibold">
-              Marketing
+          <div ref={copiesRef} id="boxCopies" className="">
+            <div id="box2Copy" className="text-4xl font-bold mb-4">
+              <h2 className="font-bold">Technology</h2>
             </div>
-            <div ref={marketingPointsRef} className="flex flex-col gap-2">
-              <div>Branding</div>
-              <div>Brand Name</div>
-              <div>Brand Guidelines</div>
-              <div>Strategy</div>
-              <div>Digital Marketing</div>
-              <div>S.E.O.</div>
+            <div id="box3Copy" className="text-4xl font-bold mb-4">
+              <h2 className="font-bold">Marketing</h2>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Right Section */}
-      <div
-        ref={rightRef}
-        className="w-full md:w-1/2 h-screen flex items-center justify-center bg-gray-100 text-2xl font-bold"
-      >
-        This stays fixed while left scrolls.
+        <div
+          ref={techPointsRef}
+          id="box2"
+          className="bg-[#f3f3f3] rounded-xl shadow-md p-8 h-[500px] translate-y-[100vh]"
+        >
+          <h2 className="text-xl font-bold mb-4">Technology</h2>
+          <div id="bullet2" className="hidden flex-col gap-2">
+            <div>Web Development</div>
+            <div>Softwares</div>
+            <div>Mobile Apps</div>
+            <div>Web Apps</div>
+            <div>Front-end</div>
+            <div>Back-end</div>
+          </div>
+          <div className="flex-1 flex md:hidden items-start justify-center relative pt-2">
+            <SpinnerComponent />
+          </div>
+        </div>
+
+        <div
+          ref={marketingPointsRef}
+          id="box3"
+          className="bg-[#f3f3f3] rounded-xl shadow-md p-8 h-[500px] translate-y-[100vh]"
+        >
+          <h2 className="text-xl font-bold mb-4">Marketing</h2>
+          <div id="bullet3" className="hidden flex-col gap-2">
+            <div>Branding</div>
+            <div>Brand Name</div>
+            <div>Brand Guidelines</div>
+            <div>Strategy</div>
+            <div>Digital Marketing</div>
+            <div>S.E.O.</div>
+          </div>
+          <div className="flex-1 flex md:hidden items-start justify-center relative pt-2">
+            <SpinnerComponent />
+          </div>
+        </div>
       </div>
-    </section>
+      <div className="hidden md:flex-1 md:flex items-start justify-center relative pt-10">
+        <div className="mt-10 w-4/5 h-[400px] bg-[#e0f7fa] rounded-2xl shadow-lg flex items-center justify-center">
+          {/* Example animation: spinning circle */}
+          <div className="w-[100px] h-[100px] border-8 border-[#00bcd4] border-t-white rounded-full animate-spin"></div>
+        </div>
+      </div>
+    </div>
   );
 };
 
