@@ -1,6 +1,6 @@
 import React from "react";
 import ClientSection from "../components/ClientSection";
-import HomePageSection2 from "../sections/HomePageSection2";
+import Section3 from "../sections/HomePageSection2";
 
 const Home = () => {
   return (
@@ -47,7 +47,10 @@ const Home = () => {
         </div>
       </div>
       <ClientSection />
-      <HomePageSection2 />
+      <Section3 />
+      <div className="h-[100vh] w-full bg-gray-400"></div>
+      <div className="h-[100vh] w-full bg-gray-400"></div>
+
     </div>
   );
 };
