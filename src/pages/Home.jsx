@@ -47,13 +47,6 @@ const Home = () => {
         </div>
       </div>
       <ClientSection />
-<<<<<<< HEAD
-      <Section3 />
-      <div className="h-[100vh] w-full bg-gray-400"></div>
-      <div className="h-[100vh] w-full bg-gray-400"></div>
-
-=======
->>>>>>> f6598b8 (Day 5)
     </div>
   );
 };
