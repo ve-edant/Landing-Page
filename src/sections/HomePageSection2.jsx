@@ -13,6 +13,7 @@ const Section3 = () => {
   const designBulletsRef = useRef(null);
   const copiesRef = useRef(null);
   const techPointsRef = useRef(null);
+  const techBulletsRef = useRef(null);
   const marketingPointsRef = useRef(null);
 
   useEffect(() => {
@@ -25,13 +26,13 @@ const Section3 = () => {
           end: "+=200%",
           toggleActions: "play none none reverse",
           pin: true,
-          markers: true,
+          //markers: true,
         },
       });
 
       tlIntro
         .to(copiesRef.current, {
-          y: 50,
+          y: 20,
           opacity: 0,
           duration: 0.4,
           ease: "power1.out",
@@ -47,15 +48,29 @@ const Section3 = () => {
         });
 
       // Timeline 2: Box 2 scroll motion
-      gsap.to(techPointsRef.current, {
+      gsap.to("#box2", {
         y: 0,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: containerRef.current,
+          trigger: "#section3",
           start: "top top",
           end: "+=100%",
           scrub: true,
-          markers: true,
+          //markers: true,
+          onUpdate: (self) => {
+            // `progress` goes from 0 → 1 across the scroll range
+            // `self.progress === 1` means y has reached its final (0) position
+            if (self.progress === 1) {
+              gsap.set(techPointsRef.current, { display: "flex" });
+              gsap.from(techBulletsRef.current.children, {
+                opacity: 0,
+                x: -50,
+                stagger: 0.05,
+                duration: 0.2,
+                ease: "power1.out",
+              });
+            }
+          },
         },
       });
 
@@ -64,9 +79,9 @@ const Section3 = () => {
         y: 0,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top top",
-          end: "+=200%", // start after box2 finishes
+          trigger: techPointsRef.current,
+          start: "top 300%",
+          end: "+=100%", // start after box2 finishes
           scrub: true,
           markers: true,
         },
@@ -79,11 +94,11 @@ const Section3 = () => {
   return (
     <div ref={containerRef} id="section3" className="flex h-[100vh]">
       {/* Left Side: 3 Boxes */}
-      <div className="flex flex-col w-full md:w-1/2 justify-center px-10 py-20 gap-6 flex-1">
+      <div className="relative w-full md:w-1/2 justify-center px-10 py-20 gap-6 flex-1">
         <div
           ref={designPointsRef}
           id="box1"
-          className="flex flex-col ml-20"
+          className="flex flex-col md:ml-20 absolute  top-[64px] left-0"
         >
           <h2 className="text-4xl font-bold mb-4">Design</h2>
           <div
@@ -114,10 +129,14 @@ const Section3 = () => {
         <div
           ref={techPointsRef}
           id="box2"
-          className="bg-[#f3f3f3] rounded-xl shadow-md p-8 h-[500px] translate-y-[100vh]"
+          className="absolute top-[64px] left-0 bg-[#f3f3f3] rounded-xl shadow-md p-8 h-[500px] translate-y-[200vh]"
         >
           <h2 className="text-xl font-bold mb-4">Technology</h2>
-          <div id="bullet2" className="hidden flex-col gap-2">
+          <div
+            ref={techBulletsRef}
+            id="bullet2"
+            className="hidden flex-col gap-2"
+          >
             <div>Web Development</div>
             <div>Softwares</div>
             <div>Mobile Apps</div>
@@ -133,7 +152,7 @@ const Section3 = () => {
         <div
           ref={marketingPointsRef}
           id="box3"
-          className="bg-[#f3f3f3] rounded-xl shadow-md p-8 h-[500px] translate-y-[100vh]"
+          className="absolute top-[64px] left-0 bg-[#ff0000] rounded-xl shadow-md p-8 h-[500px] translate-y-[100vh]"
         >
           <h2 className="text-xl font-bold mb-4">Marketing</h2>
           <div id="bullet3" className="hidden flex-col gap-2">

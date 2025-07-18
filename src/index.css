@@ -4,3 +4,17 @@
   opacity: 1 !important;
   transform: translateX(0px) !important;
 }
+
+
+@keyframes dots-move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-20px);
+  }
+}
+
+.animate-dots {
+  animation: dots-move 0.5s linear infinite;
+}
