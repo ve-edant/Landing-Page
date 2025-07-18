@@ -46,7 +46,6 @@ const Home = () => {
         </div>
       </div>
       <ClientSection />
-      <HomePageSection2 />
     </div>
   );
 };
