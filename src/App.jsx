@@ -13,26 +13,31 @@ import Technology from "./Subpages/Technology";
 import { Career } from "./Subpages/Career";
 import Team from "./Subpages/Team";
 import Marketing from "./Subpages/Marketing";
+import NewHomePage from "./pages/NewHomePage";
+import SmoothScroll from "./lib/smoothScroll";
 
 function App() {
   return (
     <Router>
-      <MainLayout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/clients" element={<Clients />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/knowledge" element={<Knowledge />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/career" element={<Career />} />
-          <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/design" element={<Design />} />
-          <Route path="/marketing" element={<Marketing />} />
-          <Route path="/technology" element={<Technology />} />
-        </Routes>
-      </MainLayout>
+      <SmoothScroll>
+        <MainLayout>
+          <Routes>
+            <Route path="/" element={<NewHomePage />} />
+            <Route path="/oldHome" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/clients" element={<Clients />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/knowledge" element={<Knowledge />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/career" element={<Career />} />
+            <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/design" element={<Design />} />
+            <Route path="/marketing" element={<Marketing />} />
+            <Route path="/technology" element={<Technology />} />
+          </Routes>
+        </MainLayout>
+      </SmoothScroll>
     </Router>
   );
 }

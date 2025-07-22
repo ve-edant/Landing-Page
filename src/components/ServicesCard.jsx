@@ -1,14 +1,14 @@
 import React from "react";
 
-const ServicesCard = ({ title, description, subpoints = [], imageSrc }) => {
+const ServicesCard = ({id, title, description, subpoints = [], imageSrc }) => {
   return (
-    <div className="flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden w-full h-[80vh] max-w-5xl mx-auto">
+    <div id={id} className="flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden w-full h-[80vh] max-w-5xl mx-auto">
       {/* Left side: Image */}
-      <div className="md:w-1/2 h-64 md:h-auto p-10">
+      <div className="md:w-1/2 h-64 md:h-auto p-10 flex items-center justify-center">
         <img
           src={imageSrc}
           alt={title}
-          className="w-full h-full object-cover bg-black"
+          className="aspect-square w-[50vw] md:w-[40vw] object-contain"
         />
       </div>
       {/* Right side: Text */}
