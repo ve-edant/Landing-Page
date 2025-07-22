@@ -1,6 +1,7 @@
 import React from "react";
 import { MdOutlineArrowOutward } from "react-icons/md";
 import HeroTitle from "../components/HeroTile";
+import HeroImg from "../assets/images/image.png"
 
 const HeroSection = () => {
   return (
@@ -31,8 +32,7 @@ const HeroSection = () => {
         </div>
         {/* Right side visuals */}
         <div className="md:w-1/3 flex items-center justify-center relative p-2 z-20">
-          {/* Top Left Card */}
-          <div className="bg-amber-300 aspect-square w-full"></div>
+        <img className="object-contain" src={HeroImg} alt="Hero Image" />
         </div>
       </div>
     </section>
