@@ -106,7 +106,7 @@ export default function DafliTechLogo() {
         className="z-50"
         cx="256"
         cy="256"
-        r="40"
+        r="45"
         fill="#0066a1"
       />
 
@@ -173,49 +173,49 @@ export default function DafliTechLogo() {
         className="outer-circle"
         data-final-x="256"
         data-final-y="110"
-        r="20"
+        r="25"
         fill="#0066a1"
       />
       <circle
         className="outer-circle"
         data-final-x="340"
         data-final-y="220"
-        r="20"
+        r="25"
         fill="#0066a1"
       />
       <circle
         className="outer-circle"
         data-final-x="370"
         data-final-y="292"
-        r="8"
+        r="13"
         fill="#0066a1"
       />
       <circle
         className="outer-circle"
         data-final-x="325"
         data-final-y="400"
-        r="25"
+        r="30"
         fill="#0066a1"
       />
       <circle
         className="outer-circle"
         data-final-x="230"
         data-final-y="330"
-        r="10"
+        r="15"
         fill="#0066a1"
       />
       <circle
         className="outer-circle"
         data-final-x="130"
         data-final-y="305"
-        r="15"
+        r="20"
         fill="#0066a1"
       />
       <circle
         className="outer-circle"
         data-final-x="190"
         data-final-y="200"
-        r="10"
+        r="15"
         fill="#0066a1"
       />
 
