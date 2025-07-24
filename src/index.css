@@ -21,6 +21,7 @@
 
 .cube{
   z-index: 10;
+  background-color: #fff;
 }
 
 /* General Styling for Cube Faces */
@@ -43,23 +44,25 @@
 }
 
 .line2 {
-  stroke: #0066a1;
   stroke-dasharray: 9, 9;
   stroke-linecap: round;
   fill: none;
+  z-index: 20;
   animation: move-dashed-line 4s linear infinite;
 }
 
 .line-thick {
   stroke-width: 2;
+  z-index: 30;
 }
 
 .line-thin {
   stroke-width: 1;
+  z-index: 30;
 }
 
 .cube-wire {
-  fill: none;
+  fill: white;
   stroke: #000;
   stroke-width: 1;
 }

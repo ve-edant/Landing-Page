@@ -18,13 +18,24 @@ export default function DafliTechLogo() {
       [190, 200],
     ];
 
+    const cubePositions = [
+      [256, 120],
+      [350, 215],
+      [365, 291],
+      [320, 390],
+      [230, 330],
+      [140, 300],
+      [190, 200],
+    ];
+
     const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
 
     // --- CYCLE 1: Circles ---
     tl.set(circles, { opacity: 1, attr: { cx: 256, cy: 256 } })
+      .set("#centerCircle", { fill: "#0066a1" })
       .set(cubes, { opacity: 0 })
       .set(lines, { opacity: 0 })
-      .set(lines2, {opacity:0})
+      .set(lines2, { opacity: 0, stroke: "#0066a1" })
 
       .to(circles, {
         duration: 1,
@@ -38,6 +49,7 @@ export default function DafliTechLogo() {
       .to(lines, { duration: 0.5, opacity: 1 }, "+=0.2")
       .to(circles, {
         duration: 1,
+        delay: 1,
         attr: (i, target) => ({
           cx: target.getAttribute("data-final-x"),
           cy: target.getAttribute("data-final-y"),
@@ -53,16 +65,17 @@ export default function DafliTechLogo() {
 
       // --- CYCLE 2: Cubes ---
       .set(circles, { opacity: 0 })
+      .set("#centerCircle", { fill: "#000000" })
       .set(cubes, { x: 256, y: 256 })
       .to(cubes, {
         duration: 1,
-        opacity:1,
+        opacity: 1,
         stagger: 0.1,
-        x: (i) => heptagonPositions[i][0],
-        y: (i) => heptagonPositions[i][1],
+        x: (i) => cubePositions[i][0],
+        y: (i) => cubePositions[i][1],
         ease: "power2.out",
       })
-      .to(lines2, { duration: 0.5, opacity: 1 }, "+=0.2")
+      .to(lines2, { duration: 0.5, opacity: 1, stroke: "#000000" }, "+=0.2")
       .to(cubes, {
         duration: 1,
         x: (i, target) => parseFloat(target.getAttribute("data-final-x")),
@@ -71,7 +84,7 @@ export default function DafliTechLogo() {
       })
       .to(lines2, { duration: 0.3, opacity: 0 }, "+=1")
       .to(cubes, {
-        opacity:0,
+        opacity: 0,
         duration: 1,
         x: 256,
         y: 256,
@@ -88,7 +101,14 @@ export default function DafliTechLogo() {
         </linearGradient>
       </defs>
 
-      <circle className="z-50" cx="256" cy="256" r="40" fill="#0066a1" />
+      <circle
+        id="centerCircle"
+        className="z-50"
+        cx="256"
+        cy="256"
+        r="40"
+        fill="#0066a1"
+      />
 
       {/* Lines */}
       <line
@@ -242,54 +262,81 @@ export default function DafliTechLogo() {
 
       {/* Other cubes */}
       <g className="cube" data-final-x="256" data-final-y="110">
-        <polygon points="0,-30 30,-15 0,0 -30,-15" className="cube-face-top" />
-        <polygon points="-30,-15 0,0 0,30 -30,15" className="cube-face-left" />
-        <polygon points="0,0 30,-15 30,15 0,30" className="cube-face-right" />
+        <polygon
+          points="0,-45 45,-22.5 0,0 -45,-22.5"
+          className="cube-face-top"
+        />
+        <polygon
+          points="-45,-22.5 0,0 0,45 -45,22.5"
+          className="cube-face-left"
+        />
+        <polygon
+          points="0,0 45,-22.5 45,22.5 0,45"
+          className="cube-face-right"
+        />
       </g>
 
-      <g className="cube" data-final-x="340" data-final-y="220">
-        <polygon points="0,-30 30,-15 0,0 -30,-15" className="cube-wire" />
-        <polygon points="-30,-15 0,0 0,30 -30,15" className="cube-wire" />
-        <polygon points="0,0 30,-15 30,15 0,30" className="cube-wire" />
+      <g className="cube" data-final-x="360" data-final-y="210">
+        <polygon points="0,-45 45,-22.5 0,0 -45,-22.5" className="cube-wire" />
+        <polygon points="-45,-22.5 0,0 0,45 -45,22.5" className="cube-wire" />
+        <polygon points="0,0 45,-22.5 45,22.5 0,45" className="cube-wire" />
       </g>
 
       <g className="cube" data-final-x="370" data-final-y="292">
-        <polygon points="0,-12 12,-6 0,0 -12,-6" className="cube-face-top" />
-        <polygon points="-12,-6 0,0 0,12 -12,6" className="cube-face-left" />
-        <polygon points="0,0 12,-6 12,6 0,12" className="cube-face-right" />
+        <polygon points="0,-18 18,-9 0,0 -18,-9" className="cube-face-top" />
+        <polygon points="-18,-9 0,0 0,18 -18,9" className="cube-face-left" />
+        <polygon points="0,0 18,-9 18,9 0,18" className="cube-face-right" />
       </g>
 
       <g className="cube" data-final-x="325" data-final-y="400">
-        <polygon points="0,-36 36,-18 0,0 -36,-18" className="cube-face-top" />
-        <polygon points="-36,-18 0,0 0,36 -36,18" className="cube-face-left" />
-        <polygon points="0,0 36,-18 36,18 0,36" className="cube-face-right" />
+        <polygon points="0,-54 54,-27 0,0 -54,-27" className="cube-face-top" />
+        <polygon points="-54,-27 0,0 0,54 -54,27" className="cube-face-left" />
+        <polygon points="0,0 54,-27 54,27 0,54" className="cube-face-right" />
       </g>
 
       <g className="cube" data-final-x="230" data-final-y="330">
-        <polygon points="0,-15 15,-7.5 0,0 -15,-7.5" className="cube-wire" />
-        <polygon points="-15,-7.5 0,0 0,15 -15,7.5" className="cube-wire" />
-        <polygon points="0,0 15,-7.5 15,7.5 0,15" className="cube-wire" />
+        <polygon
+          points="0,-22.5 22.5,-11.25 0,0 -22.5,-11.25"
+          className="cube-wire"
+        />
+        <polygon
+          points="-22.5,-11.25 0,0 0,22.5 -22.5,11.25"
+          className="cube-wire"
+        />
+        <polygon
+          points="0,0 22.5,-11.25 22.5,11.25 0,22.5"
+          className="cube-wire"
+        />
       </g>
 
       <g className="cube" data-final-x="130" data-final-y="305">
         <polygon
-          points="0,-21 21,-10.5 0,0 -21,-10.5"
+          points="0,-31.5 31.5,-15.75 0,0 -31.5,-15.75"
           className="cube-face-top"
         />
         <polygon
-          points="-21,-10.5 0,0 0,21 -21,10.5"
+          points="-31.5,-15.75 0,0 0,31.5 -31.5,15.75"
           className="cube-face-left"
         />
         <polygon
-          points="0,0 21,-10.5 21,10.5 0,21"
+          points="0,0 31.5,-15.75 31.5,15.75 0,31.5"
           className="cube-face-right"
         />
       </g>
 
       <g className="cube" data-final-x="190" data-final-y="200">
-        <polygon points="0,-15 15,-7.5 0,0 -15,-7.5" className="cube-wire" />
-        <polygon points="-15,-7.5 0,0 0,15 -15,7.5" className="cube-wire" />
-        <polygon points="0,0 15,-7.5 15,7.5 0,15" className="cube-wire" />
+        <polygon
+          points="0,-22.5 22.5,-11.25 0,0 -22.5,-11.25"
+          className="cube-wire"
+        />
+        <polygon
+          points="-22.5,-11.25 0,0 0,22.5 -22.5,11.25"
+          className="cube-wire"
+        />
+        <polygon
+          points="0,0 22.5,-11.25 22.5,11.25 0,22.5"
+          className="cube-wire"
+        />
       </g>
     </svg>
   );
