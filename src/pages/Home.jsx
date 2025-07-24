@@ -26,7 +26,7 @@ const Home = () => {
         {/* Left: Animation Placeholder */}
         <div
           id="animation"
-          className="z-10 w-full md:w-1/2 h-[70vh] md:h-[500px] flex items-center justify-center rounded-lg"
+          className="z-10 w-full md:w-1/2 h-[50vh] md:h-[500px] flex items-center justify-center rounded-lg"
         >
           <HeroAnimation />
         </div>

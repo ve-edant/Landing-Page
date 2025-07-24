@@ -79,12 +79,12 @@
 
 /* Cube Hover Effect */
 .cube:hover {
+  
   transition: transform 0.2s ease-in-out;
-  filter: drop-shadow(0 0 8px rgba(0, 102, 161, 0.6));
   filter: brightness(1.5); /* Increased brightness on hover */
 }
 
 .cube-wire:hover {
-  stroke: #ff4d4d; /* Red color when hovered */
+  stroke: #002fff; /* Red color when hovered */
   transition: stroke 0.3s ease;
 }

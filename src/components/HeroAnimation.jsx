@@ -9,23 +9,23 @@ export default function DafliTechLogo() {
     const lines2 = gsap.utils.toArray(".line2");
 
     const heptagonPositions = [
-      [256, 120],
-      [340, 223],
-      [365, 291],
-      [320, 390],
-      [230, 330],
-      [140, 300],
-      [190, 200],
+      [256, 70],
+      [360, 210],
+      [445, 315],
+      [345, 425],
+      [215, 359],
+      [100, 315],
+      [178, 190],
     ];
 
     const cubePositions = [
-      [256, 120],
-      [350, 215],
-      [365, 291],
-      [320, 390],
-      [230, 330],
-      [140, 300],
-      [190, 200],
+      [256, 70],
+      [360, 210],
+      [445, 315],
+      [345, 425],
+      [215, 359],
+      [100, 315],
+      [178, 190],
     ];
 
     const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
@@ -106,115 +106,116 @@ export default function DafliTechLogo() {
         className="z-50"
         cx="256"
         cy="256"
-        r="45"
+        r="55"
         fill="#0066a1"
       />
 
-      {/* Lines */}
+      {/* Lines Circle*/}
+
       <line
         x1="256"
         y1="256"
         x2="256"
-        y2="120"
+        y2="60"
         stroke="#0066a1"
-        strokeWidth="10"
+        stroke-width="10"
       />
       <line
         x1="256"
         y1="256"
-        x2="340"
-        y2="223"
+        x2="370"
+        y2="210"
         stroke="#0066a1"
-        strokeWidth="5"
+        stroke-width="5"
       />
       <line
         x1="256"
         y1="256"
-        x2="365"
-        y2="291"
+        x2="450"
+        y2="319"
         stroke="#0066a1"
-        strokeWidth="5"
+        stroke-width="5"
       />
       <line
         x1="256"
         y1="256"
-        x2="320"
-        y2="390"
+        x2="355"
+        y2="438"
         stroke="#0066a1"
-        strokeWidth="10"
+        stroke-width="10"
       />
       <line
         x1="256"
         y1="256"
-        x2="230"
-        y2="330"
+        x2="210"
+        y2="370"
         stroke="#0066a1"
-        strokeWidth="5"
+        stroke-width="5"
       />
       <line
         x1="256"
         y1="256"
-        x2="140"
-        y2="300"
+        x2="90"
+        y2="322"
         stroke="#0066a1"
-        strokeWidth="10"
+        stroke-width="10"
       />
       <line
         x1="256"
         y1="256"
-        x2="190"
-        y2="200"
+        x2="168"
+        y2="180"
         stroke="#0066a1"
-        strokeWidth="5"
+        stroke-width="5"
       />
 
       {/* Circles */}
       <circle
-        className="outer-circle"
+        class="outer-circle"
         data-final-x="256"
-        data-final-y="110"
-        r="25"
+        data-final-y="60"
+        r="28"
         fill="#0066a1"
       />
       <circle
-        className="outer-circle"
-        data-final-x="340"
-        data-final-y="220"
-        r="25"
-        fill="#0066a1"
-      />
-      <circle
-        className="outer-circle"
+        class="outer-circle"
         data-final-x="370"
-        data-final-y="292"
-        r="13"
+        data-final-y="210"
+        r="25"
         fill="#0066a1"
       />
       <circle
-        className="outer-circle"
-        data-final-x="325"
-        data-final-y="400"
-        r="30"
+        class="outer-circle"
+        data-final-x="450"
+        data-final-y="319"
+        r="12"
         fill="#0066a1"
       />
       <circle
-        className="outer-circle"
-        data-final-x="230"
-        data-final-y="330"
+        class="outer-circle"
+        data-final-x="355"
+        data-final-y="438"
+        r="28"
+        fill="#0066a1"
+      />
+      <circle
+        class="outer-circle"
+        data-final-x="210"
+        data-final-y="370"
         r="15"
         fill="#0066a1"
       />
       <circle
-        className="outer-circle"
-        data-final-x="130"
-        data-final-y="305"
+        class="outer-circle"
+        data-final-x="90"
+        data-final-y="322"
         r="20"
         fill="#0066a1"
       />
       <circle
-        className="outer-circle"
-        data-final-x="190"
-        data-final-y="200"
+        class="outer-circle"
+        data-final-x="168"
+        data-final-y="180"
         r="15"
         fill="#0066a1"
       />
@@ -245,13 +246,13 @@ export default function DafliTechLogo() {
         </linearGradient>
       </defs>
 
-      <line x1="256" y1="256" x2="256" y2="120" class="line2 line-thick" />
+      <line x1="256" y1="256" x2="256" y2="60" class="line2 line-thick" />
       <line x1="256" y1="256" x2="340" y2="223" class="line2 line-thin" />
-      <line x1="256" y1="256" x2="365" y2="291" class="line2 line-thin" />
-      <line x1="256" y1="256" x2="320" y2="390" class="line2 line-thick" />
-      <line x1="256" y1="256" x2="230" y2="330" class="line2 line-thin" />
-      <line x1="256" y1="256" x2="140" y2="300" class="line2 line-thick" />
-      <line x1="256" y1="256" x2="190" y2="200" class="line2 line-thin" />
+      <line x1="256" y1="256" x2="450" y2="319" class="line2 line-thin" />
+      <line x1="256" y1="256" x2="355" y2="438" class="line2 line-thick" />
+      <line x1="256" y1="256" x2="210" y2="370" class="line2 line-thin" />
+      <line x1="256" y1="256" x2="90" y2="322" class="line2 line-thick" />
+      <line x1="256" y1="256" x2="168" y2="180" class="line2 line-thin" />
 
       {/* Center cube (larger) */}
       {/* <g transform="translate(256,256)" className="cube" data-final-x="256" data-final-y="256">
@@ -261,7 +262,7 @@ export default function DafliTechLogo() {
       </g> */}
 
       {/* Other cubes */}
-      <g className="cube" data-final-x="256" data-final-y="110">
+      <g className="cube" data-final-x="256" data-final-y="60">
         <polygon
           points="0,-45 45,-22.5 0,0 -45,-22.5"
           className="cube-face-top"
@@ -276,25 +277,25 @@ export default function DafliTechLogo() {
         />
       </g>
 
-      <g className="cube" data-final-x="360" data-final-y="210">
+      <g className="cube" data-final-x="370" data-final-y="210">
         <polygon points="0,-45 45,-22.5 0,0 -45,-22.5" className="cube-wire" />
         <polygon points="-45,-22.5 0,0 0,45 -45,22.5" className="cube-wire" />
         <polygon points="0,0 45,-22.5 45,22.5 0,45" className="cube-wire" />
       </g>
 
-      <g className="cube" data-final-x="370" data-final-y="292">
+      <g className="cube" data-final-x="450" data-final-y="319">
         <polygon points="0,-18 18,-9 0,0 -18,-9" className="cube-face-top" />
         <polygon points="-18,-9 0,0 0,18 -18,9" className="cube-face-left" />
         <polygon points="0,0 18,-9 18,9 0,18" className="cube-face-right" />
       </g>
 
-      <g className="cube" data-final-x="325" data-final-y="400">
+      <g className="cube" data-final-x="355" data-final-y="438">
         <polygon points="0,-54 54,-27 0,0 -54,-27" className="cube-face-top" />
         <polygon points="-54,-27 0,0 0,54 -54,27" className="cube-face-left" />
         <polygon points="0,0 54,-27 54,27 0,54" className="cube-face-right" />
       </g>
 
-      <g className="cube" data-final-x="230" data-final-y="330">
+      <g className="cube" data-final-x="210" data-final-y="370">
         <polygon
           points="0,-22.5 22.5,-11.25 0,0 -22.5,-11.25"
           className="cube-wire"
@@ -309,7 +310,7 @@ export default function DafliTechLogo() {
         />
       </g>
 
-      <g className="cube" data-final-x="130" data-final-y="305">
+      <g className="cube" data-final-x="90" data-final-y="322">
         <polygon
           points="0,-31.5 31.5,-15.75 0,0 -31.5,-15.75"
           className="cube-face-top"
@@ -324,7 +325,7 @@ export default function DafliTechLogo() {
         />
       </g>
 
-      <g className="cube" data-final-x="190" data-final-y="200">
+      <g className="cube" data-final-x="168" data-final-y="180">
         <polygon
           points="0,-22.5 22.5,-11.25 0,0 -22.5,-11.25"
           className="cube-wire"
