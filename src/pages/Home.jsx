@@ -2,6 +2,7 @@ import React from "react";
 import ClientSection from "../components/ClientSection";
 import Section3 from "../sections/Section3";
 import MeetTheFounder from "../sections/MeetTheFounder";
+import HeroAnimation from "../components/HeroAnimation";
 
 const Home = () => {
   return (
@@ -25,12 +26,9 @@ const Home = () => {
         {/* Left: Animation Placeholder */}
         <div
           id="animation"
-          className="z-10 w-full md:w-1/2 h-[90vh] md:h-[500px] bg-yellow-100 flex items-center justify-center rounded-lg"
+          className="z-10 w-full md:w-1/2 h-[70vh] md:h-[500px] flex items-center justify-center rounded-lg"
         >
-          {/* Replace with your actual animation component like Lottie or SVG */}
-          <span className="text-xl font-semibold text-gray-600">
-            [ Animation Here ]
-          </span>
+          <HeroAnimation />
         </div>
 
         {/* Right: Hero Content */}

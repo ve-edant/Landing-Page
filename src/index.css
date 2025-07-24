@@ -18,3 +18,70 @@
 .animate-dots {
   animation: dots-move 0.5s linear infinite;
 }
+
+.cube{
+  z-index: 10;
+}
+
+/* General Styling for Cube Faces */
+.cube-face-top {
+  fill: url(#grad-top);
+  stroke: #000;
+  stroke-width: 1;
+}
+
+.cube-face-left {
+  fill: url(#grad-left);
+  stroke: #000;
+  stroke-width: 1;
+}
+
+.cube-face-right {
+  fill: url(#grad-right);
+  stroke: #000;
+  stroke-width: 1;
+}
+
+.line2 {
+  stroke: #0066a1;
+  stroke-dasharray: 9, 9;
+  stroke-linecap: round;
+  fill: none;
+  animation: move-dashed-line 4s linear infinite;
+}
+
+.line-thick {
+  stroke-width: 2;
+}
+
+.line-thin {
+  stroke-width: 1;
+}
+
+.cube-wire {
+  fill: none;
+  stroke: #000;
+  stroke-width: 1;
+}
+
+/* Keyframes for moving dashed lines */
+@keyframes move-dashed-line {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -1000;
+  }
+}
+
+/* Cube Hover Effect */
+.cube:hover {
+  transition: transform 0.2s ease-in-out;
+  filter: drop-shadow(0 0 8px rgba(0, 102, 161, 0.6));
+  filter: brightness(1.5); /* Increased brightness on hover */
+}
+
+.cube-wire:hover {
+  stroke: #ff4d4d; /* Red color when hovered */
+  transition: stroke 0.3s ease;
+}
