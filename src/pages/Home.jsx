@@ -1,6 +1,7 @@
 import React from "react";
 import ClientSection from "../components/ClientSection";
-import Section3 from "../sections/HomePageSection2";
+import Section3 from "../sections/Section3";
+import MeetTheFounder from "../sections/MeetTheFounder";
 
 const Home = () => {
   return (
@@ -48,8 +49,7 @@ const Home = () => {
       </div>
       <ClientSection />
       <Section3 />
-      <div className="h-[100vh] w-full bg-gray-400"></div>
-      <div className="h-[100vh] w-full bg-gray-400"></div>
+      <MeetTheFounder />
 
     </div>
   );

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import NewDropdownCard from "./NewDropDown";
+import Logo from "../assets/images/Logo.png";
 // No GSAP import needed anymore!
 
 const NewNavbar = () => {
@@ -15,12 +16,16 @@ const NewNavbar = () => {
     <header className="w-full fixed top-0 left-0 z-50 bg-white border-b border-black shadow-md">
       <div className="max-w-screen-xl mx-0 md:mx-10 lg:mx-32 flex flex-col px-4">
         {/* Top Nav Bar - Fixed Height */}
-        <div className="h-16 flex justify-between items-center">
+        <div className="h-full flex justify-between items-center">
           <Link
             to="/"
-            className="text-lg font-bold text-yellow-500 h-full w-full flex items-center cursor-pointer"
+            className="h-full w-full flex items-center cursor-pointer"
           >
-            LOGO
+            <img
+              src={Logo}
+              alt="Dafli Tech"
+              className="object-contain h-17" // ensures proper scaling
+            />
           </Link>
 
           <nav className="hidden h-16 md:flex gap-10 text-md font-medium text-gray-800 items-center">
@@ -36,13 +41,12 @@ const NewNavbar = () => {
               Clients
             </Link>
 
-            <div
+            <Link
+              to="/aboutus"
               className="relative h-full w-full flex items-center justify-center cursor-pointer hover:text-yellow-500"
-              onMouseEnter={() => showDropdown("about")}
-              onMouseLeave={hideDropdown}
             >
               About
-            </div>
+            </Link>
 
             <Link to="/knowledge" className="hover:text-yellow-500">
               Knowledge
@@ -81,57 +85,61 @@ const NewNavbar = () => {
         {/* Desktop Dropdown Animated Wrapper */}
         <div
           className={`
-            overflow-hidden
-            absolute top-16 left-0 right-0 // Position below the main navbar
-            bg-white border-b border-black z-40
-            transition-all duration-300 ease-in-out // Apply transitions
-            ${activeDropdown ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}
-          `}
+    overflow-hidden absolute top-16 left-0 right-0
+    bg-white/95 backdrop-blur-md border-b border-black z-40
+    transition-all duration-300 ease-in-out
+    ${activeDropdown ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"}
+  `}
           onMouseEnter={() => showDropdown(activeDropdown)}
           onMouseLeave={hideDropdown}
         >
           {/* Dropdown Inner Content */}
-          <div className="w-[70vw] h-[90px] mx-auto py-6 px-4 flex flex-wrap justify-between bg-white rounded-xl shadow-lg">
-            {activeDropdown === "services" && (
-              <>
+          <div className="w-[70vw] mx-auto py-6 px-6 flex flex-wrap justify-center gap-4">
+            {activeDropdown === "services" &&
+              [
+                {
+                  to: "#Blockchain_Development",
+                  title: "Blockchain Development",
+                  color: "bg-yellow-100",
+                },
+                {
+                  to: "#AI_Development",
+                  title: "AI Development Services",
+                  color: "bg-purple-100",
+                },
+                {
+                  to: "#Game_Development",
+                  title: "Game Development",
+                  color: "bg-green-100",
+                },
+                {
+                  to: "#Crypto_Exchange",
+                  title: "Crypto Exchange Development",
+                  color: "bg-blue-100",
+                },
+                {
+                  to: "#Web3_Development",
+                  title: "Web3 Development",
+                  color: "bg-pink-100",
+                },
+                {
+                  to: "#Web_Design",
+                  title: "Web Design & Development",
+                  color: "bg-orange-100",
+                },
+                {
+                  to: "#Mobile_App_Development",
+                  title: "iOS & Android App Development",
+                  color: "bg-red-100",
+                },
+              ].map(({ to, title, color }, index) => (
                 <NewDropdownCard
-                  to="#Blockchain_Development"
-                  title="Blockchain Development"
+                  key={index}
+                  to={`/services/${to}`}
+                  title={title}
+                  bgColor={color}
                 />
-                <NewDropdownCard
-                  to="#AI_Development"
-                  title="AI Development Services"
-                />
-                <NewDropdownCard
-                  to="#Game_Development"
-                  title="Game Development"
-                />
-                <NewDropdownCard
-                  to="#Crypto_Exchange"
-                  title="Crypto Exchange Development"
-                />
-                <NewDropdownCard
-                  to="#Web3_Development"
-                  title="Web3 Development"
-                />
-                <NewDropdownCard
-                  to="#Web_Design"
-                  title="Web Design & Development"
-                />
-                <NewDropdownCard
-                  to="#Mobile_App_Development"
-                  title="iOS & Android App Development"
-                />
-              </>
-            )}
-
-            {activeDropdown === "about" && (
-              <>
-                <NewDropdownCard to="/aboutus" title="About Us." />
-                <NewDropdownCard to="/team" title="Team." />
-                <NewDropdownCard to="/career" title="Careers." />
-              </>
-            )}
+              ))}
           </div>
         </div>
 
@@ -189,49 +197,60 @@ const NewNavbar = () => {
                 {/* Mobile Dropdown Content (Services) */}
                 <div
                   className={`
-                    pl-0 md:pl-4 mt-2 flex flex-col gap-2
-                    overflow-hidden transition-all duration-300 ease-in-out
-                    ${
-                      mobileDropdown === "services"
-                        ? "max-h-screen opacity-100 pt-2"
-                        : "max-h-0 opacity-0"
-                    }
-                  `}
+    pl-0 md:pl-4 mt-2 flex flex-col gap-3
+    overflow-hidden transition-all duration-300 ease-in-out
+    ${
+      mobileDropdown === "services"
+        ? "max-h-screen opacity-100 pt-3"
+        : "max-h-0 opacity-0"
+    }
+  `}
                 >
-                  <NewDropdownCard
-                    to="#Blockchain_Development"
-                    title="Blockchain Development"
-                  />
-                  <NewDropdownCard
-                    to="#AI_Development"
-                    setIsSidebarOpen={setIsSidebarOpen}
-                    title="AI Development Services"
-                  />
-                  <NewDropdownCard
-                    to="#Game_Development"
-                    setIsSidebarOpen={setIsSidebarOpen}
-                    title="Game Development"
-                  />
-                  <NewDropdownCard
-                    to="#Crypto_Exchange"
-                    setIsSidebarOpen={setIsSidebarOpen}
-                    title="Crypto Exchange Development"
-                  />
-                  <NewDropdownCard
-                    to="#Web3_Development"
-                    setIsSidebarOpen={setIsSidebarOpen}
-                    title="Web3 Development"
-                  />
-                  <NewDropdownCard
-                    to="#Web_Design"
-                    setIsSidebarOpen={setIsSidebarOpen}
-                    title="Web Design & Development"
-                  />
-                  <NewDropdownCard
-                    to="#Mobile_App_Development"
-                    setIsSidebarOpen={setIsSidebarOpen}
-                    title="iOS & Android App Development"
-                  />
+                  {[
+                    {
+                      to: "#Blockchain_Development",
+                      title: "Blockchain Development",
+                      color: "bg-yellow-100",
+                    },
+                    {
+                      to: "#AI_Development",
+                      title: "AI Development Services",
+                      color: "bg-purple-100",
+                    },
+                    {
+                      to: "#Game_Development",
+                      title: "Game Development",
+                      color: "bg-green-100",
+                    },
+                    {
+                      to: "#Crypto_Exchange",
+                      title: "Crypto Exchange Development",
+                      color: "bg-blue-100",
+                    },
+                    {
+                      to: "#Web3_Development",
+                      title: "Web3 Development",
+                      color: "bg-pink-100",
+                    },
+                    {
+                      to: "#Web_Design",
+                      title: "Web Design & Development",
+                      color: "bg-orange-100",
+                    },
+                    {
+                      to: "#Mobile_App_Development",
+                      title: "iOS & Android App Development",
+                      color: "bg-red-100",
+                    },
+                  ].map(({ to, title, color }, index) => (
+                    <NewDropdownCard
+                      key={index}
+                      to={to}
+                      title={title}
+                      bgColor={color}
+                      setIsSidebarOpen={setIsSidebarOpen}
+                    />
+                  ))}
                 </div>
               </div>
 
@@ -239,46 +258,9 @@ const NewNavbar = () => {
                 Clients
               </Link>
 
-              <div>
-                <button
-                  onClick={() =>
-                    setMobileDropdown((prev) =>
-                      prev === "about" ? null : "about"
-                    )
-                  }
-                  className="w-full text-left hover:text-yellow-500"
-                >
-                  About
-                </button>
-                {/* Mobile Dropdown Content (About) */}
-                <div
-                  className={`
-                    pl-0 md:pl-4 mt-2 flex flex-col gap-2
-                    overflow-hidden transition-all duration-300 ease-in-out
-                    ${
-                      mobileDropdown === "about"
-                        ? "max-h-screen opacity-100 pt-2"
-                        : "max-h-0 opacity-0"
-                    }
-                  `}
-                >
-                  <NewDropdownCard
-                    to="/aboutus"
-                    setIsSidebarOpen={setIsSidebarOpen}
-                    title="About Us."
-                  />
-                  <NewDropdownCard
-                    to="/team"
-                    setIsSidebarOpen={setIsSidebarOpen}
-                    title="Team."
-                  />
-                  <NewDropdownCard
-                    to="/career"
-                    setIsSidebarOpen={setIsSidebarOpen}
-                    title="Careers."
-                  />
-                </div>
-              </div>
+              <Link to="/aboutus" onClick={() => setIsSidebarOpen(false)}>
+                About
+              </Link>
 
               <Link to="/knowledge" onClick={() => setIsSidebarOpen(false)}>
                 Knowledge
