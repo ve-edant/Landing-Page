@@ -1,50 +1,73 @@
-import React from 'react';
-import LeftImage from '../assets/left-desk.png.jpg';    // replace with your actual image name
-import RightImage from '../assets/right-desk.png.jpg';
+import React from "react";
 
-function AboutUs() {
+const AboutUs = () => {
   return (
-    <div className="relative bg-white py-16 overflow-hidden">
-      {/* Background Images */}
-      <img
-        height={500} width={300}
-        src={RightImage}
-        alt="Right Design"
-        className="absolute bottom-0 right-0 w-32 sm:w-48 lg:w-64 z-0" />
-
-      {/* Main Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-gray-800">
-        {/* First Heading */}
-        <h2 className="text-center text-pink-600 font-semibold text-lg mb-2">About Us</h2>
-
-        {/* Bold Statement */}
-        <p className="text-center text-3xl sm:text-4xl font-bold leading-snug text-black mb-12">
-          We, at <span className="text-black">Daflitech</span>, apply neuromarketing <br className="hidden sm:block" />
-          and behavioral science to design, digitize <br className="hidden sm:block" />
-          and grow your business.
+    <section className="bg-gray-50 text-gray-800">
+      {/* Hero Section */}
+      <div className="container mx-auto px-4 py-16 text-center max-w-4xl">
+        <h1 className="text-sm md:text-md font-bold mb-6 text-gray-900">
+          Welcome to <span className="text-blue-600">Daflitech</span>
+        </h1>
+        <p className="text-lg leading-relaxed text-gray-700">
+          We are committed to delivering innovative and tailored software solutions
+          that help businesses thrive in the digital era. From stunning website
+          design and ERP solutions to advanced Android applications, we empower
+          your business with tools for success.
         </p>
+      </div>
 
-        {/* Second Heading */}
-        <h2 className="text-center text-pink-600 font-semibold text-lg mb-2">About Us</h2>
-
-        {/* Paragraphs */}
-        <div className="text-center max-w-3xl mx-auto text-lg leading-relaxed">
-          <p className="mb-6">
-            At the intersection of art, technology and business, we create design
-            solutions geared toward business success.
+      {/* Who We Are */}
+      <div className="container mx-auto px-4 py-12 max-w-5xl grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h2 className="text-2xl font-bold mb-4">Who We Are</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Our unique offerings span the entire technological spectrum – from
+            cutting-edge software development to transformative digital strategies.
+            We don't just follow industry trends; we set them.
           </p>
+          <ul className="list-disc list-inside space-y-2 text-gray-600">
+            <li>Passionate about leading-edge innovation and transformation.</li>
+            <li>Dedicated to enhancing experiences for employees, clients, and society.</li>
+            <li>Inclusive and supportive of everyone we work with.</li>
+          </ul>
+        </div>
+        <img
+          src="/images/about-team.jpg"
+          alt="Our Team at Daflitech"
+          className="rounded-xl shadow-lg object-cover w-full h-64 md:h-80"
+        />
+      </div>
 
-          <p className="mb-6">
-            Since 2012, we have been global leaders in design and technology.
-            Our services range from experience designing, identity development, product strategy, branding, user experience design,
-            user interface design, technology development to digital marketing and SEO.
-          </p>
-
-          <a href="#" className="text-pink-500 font-semibold underline hover:text-pink-700 transition">More</a>
+      {/* Goals: Mission, Vision, Plans */}
+      <div className="bg-white py-16">
+        <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-3 gap-10 text-center">
+          <div className="p-6 bg-gray-50 rounded-xl shadow hover:shadow-md transition duration-300">
+            <h3 className="text-xl font-semibold mb-3 text-gray-900">Our Mission</h3>
+            <p className="text-gray-600">
+              Customer satisfaction drives us. We deliver expert guidance, timely
+              solutions, and cutting-edge technology at competitive prices to build
+              lasting brand loyalty.
+            </p>
+          </div>
+          <div className="p-6 bg-gray-50 rounded-xl shadow hover:shadow-md transition duration-300">
+            <h3 className="text-xl font-semibold mb-3 text-gray-900">Our Vision</h3>
+            <p className="text-gray-600">
+              We strive to be a leader in the digital space, empowering businesses,
+              students, and entrepreneurs to achieve new heights in a tech-driven world.
+            </p>
+          </div>
+          <div className="p-6 bg-gray-50 rounded-xl shadow hover:shadow-md transition duration-300">
+            <h3 className="text-xl font-semibold mb-3 text-gray-900">Our Plans</h3>
+            <p className="text-gray-600">
+              We offer tailored consulting and outsourcing services, forging strategic
+              partnerships to help clients grow and succeed in today’s ever-evolving
+              digital landscape.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
-}
+};
 
 export default AboutUs;

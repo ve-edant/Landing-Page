@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import DropdownCard from "./DropdownCard";
 import NewDropdownCard from "./NewDropDown";
 // No GSAP import needed anymore!
 
@@ -25,13 +24,6 @@ const NewNavbar = () => {
           </Link>
 
           <nav className="hidden h-16 md:flex gap-10 text-md font-medium text-gray-800 items-center">
-            <Link
-              to="/work"
-              className="relative h-full w-full flex items-center justify-center cursor-pointer hover:text-yellow-500"
-            >
-              Work
-            </Link>
-
             <div
               className="relative h-full w-full flex items-center justify-center cursor-pointer hover:text-pink-700"
               onMouseEnter={() => showDropdown("services")}
@@ -100,7 +92,7 @@ const NewNavbar = () => {
         >
           {/* Dropdown Inner Content */}
           <div className="w-[70vw] h-[90px] mx-auto py-6 px-4 flex flex-wrap justify-between bg-white rounded-xl shadow-lg">
-  {activeDropdown === "services" && (
+            {activeDropdown === "services" && (
               <>
                 <NewDropdownCard
                   to="#Blockchain_Development"
@@ -135,24 +127,9 @@ const NewNavbar = () => {
 
             {activeDropdown === "about" && (
               <>
-                <DropdownCard
-                  to="/aboutus"
-                  title="About Us."
-                  description="We are super-efficient yet humble to serve you."
-                  bgColor="bg-yellow-100"
-                />
-                <DropdownCard
-                  to="/team"
-                  title="Team."
-                  description="We are proud of our experienced team."
-                  bgColor="bg-red-100"
-                />
-                <DropdownCard
-                  to="/career"
-                  title="Careers."
-                  description="Can you offer such experience?"
-                  bgColor="bg-green-100"
-                />
+                <NewDropdownCard to="/aboutus" title="About Us." />
+                <NewDropdownCard to="/team" title="Team." />
+                <NewDropdownCard to="/career" title="Careers." />
               </>
             )}
           </div>
@@ -198,10 +175,6 @@ const NewNavbar = () => {
 
             {/* Navigation Links */}
             <nav className="flex flex-col gap-4 text-lg font-medium text-gray-800">
-              <Link to="/work" onClick={() => setIsSidebarOpen(false)}>
-                Work
-              </Link>
-
               <div>
                 <button
                   onClick={() =>
@@ -225,26 +198,39 @@ const NewNavbar = () => {
                     }
                   `}
                 >
-                  <DropdownCard
-                    to="/design"
-                    setIsSidebarOpen={setIsSidebarOpen}
-                    title="Design."
-                    description="Handcraft the user experience."
-                    bgColor="bg-yellow-100"
+                  <NewDropdownCard
+                    to="#Blockchain_Development"
+                    title="Blockchain Development"
                   />
-                  <DropdownCard
-                    to="/technology"
+                  <NewDropdownCard
+                    to="#AI_Development"
                     setIsSidebarOpen={setIsSidebarOpen}
-                    title="Technology."
-                    description="Leverage the power of code."
-                    bgColor="bg-red-100"
+                    title="AI Development Services"
                   />
-                  <DropdownCard
-                    to="/marketing"
+                  <NewDropdownCard
+                    to="#Game_Development"
                     setIsSidebarOpen={setIsSidebarOpen}
-                    title="Marketing."
-                    description="Creative strategies for brands."
-                    bgColor="bg-green-100"
+                    title="Game Development"
+                  />
+                  <NewDropdownCard
+                    to="#Crypto_Exchange"
+                    setIsSidebarOpen={setIsSidebarOpen}
+                    title="Crypto Exchange Development"
+                  />
+                  <NewDropdownCard
+                    to="#Web3_Development"
+                    setIsSidebarOpen={setIsSidebarOpen}
+                    title="Web3 Development"
+                  />
+                  <NewDropdownCard
+                    to="#Web_Design"
+                    setIsSidebarOpen={setIsSidebarOpen}
+                    title="Web Design & Development"
+                  />
+                  <NewDropdownCard
+                    to="#Mobile_App_Development"
+                    setIsSidebarOpen={setIsSidebarOpen}
+                    title="iOS & Android App Development"
                   />
                 </div>
               </div>
@@ -276,26 +262,20 @@ const NewNavbar = () => {
                     }
                   `}
                 >
-                  <DropdownCard
+                  <NewDropdownCard
                     to="/aboutus"
                     setIsSidebarOpen={setIsSidebarOpen}
                     title="About Us."
-                    description="We are super-efficient yet humble to serve you."
-                    bgColor="bg-yellow-100"
                   />
-                  <DropdownCard
+                  <NewDropdownCard
                     to="/team"
                     setIsSidebarOpen={setIsSidebarOpen}
                     title="Team."
-                    description="We are proud of our experienced team."
-                    bgColor="bg-red-100"
                   />
-                  <DropdownCard
+                  <NewDropdownCard
                     to="/career"
                     setIsSidebarOpen={setIsSidebarOpen}
                     title="Careers."
-                    description="Can you offer such experience?"
-                    bgColor="bg-green-100"
                   />
                 </div>
               </div>

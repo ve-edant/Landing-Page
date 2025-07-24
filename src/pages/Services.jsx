@@ -1,8 +1,17 @@
 import React from 'react'
+import HeroSection from '../sections/HeroSection'
+import ServicesSection from '../sections/ServicesSection'
+import WhyChooseUs from '../sections/WhyChooseUs'
 
 const Services = () => {
   return (
-    <div>Services</div>
+    <div>
+      <HeroSection />
+      <WhyChooseUs />
+      <ServicesSection />
+      <section></section>
+      <section></section>
+    </div>
   )
 }
 

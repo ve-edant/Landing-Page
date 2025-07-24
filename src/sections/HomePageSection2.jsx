@@ -120,9 +120,6 @@ const Section3 = () => {
             <div id="box2Copy" className="text-4xl font-bold mb-4">
               <h2 className="font-bold">Technology</h2>
             </div>
-            <div id="box3Copy" className="text-4xl font-bold mb-4">
-              <h2 className="font-bold">Marketing</h2>
-            </div>
           </div>
         </div>
 
@@ -149,7 +146,7 @@ const Section3 = () => {
           </div>
         </div>
 
-        <div
+        {/* <div
           ref={marketingPointsRef}
           id="box3"
           className="absolute top-[64px] left-0 bg-[#ff0000] rounded-xl shadow-md p-8 h-[500px] translate-y-[100vh]"
@@ -166,7 +163,7 @@ const Section3 = () => {
           <div className="flex-1 flex md:hidden items-start justify-center relative pt-2">
             <SpinnerComponent />
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="hidden md:flex-1 md:flex items-start justify-center relative pt-10">
         <div className="mt-10 w-4/5 h-[400px] bg-[#e0f7fa] rounded-2xl shadow-lg flex items-center justify-center">
