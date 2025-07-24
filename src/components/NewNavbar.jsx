@@ -5,12 +5,7 @@ import Logo from "../assets/images/Logo.png";
 // No GSAP import needed anymore!
 
 const NewNavbar = () => {
-  const [activeDropdown, setActiveDropdown] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [mobileDropdown, setMobileDropdown] = useState(null);
-
-  const showDropdown = (section) => setActiveDropdown(section);
-  const hideDropdown = () => setActiveDropdown(null);
 
   return (
     <header className="w-full fixed top-0 left-0 z-50 bg-white border-b border-black shadow-md">
@@ -29,13 +24,13 @@ const NewNavbar = () => {
           </Link>
 
           <nav className="hidden h-16 md:flex gap-10 text-md font-medium text-gray-800 items-center">
-            <div
+            <Link
               className="relative h-full w-full flex items-center justify-center cursor-pointer hover:text-pink-700"
-              onMouseEnter={() => showDropdown("services")}
-              onMouseLeave={hideDropdown}
+              to="/services"
+              
             >
               Services
-            </div>
+            </Link>
 
             <Link to="/clients" className="hover:text-yellow-500">
               Clients
@@ -82,67 +77,6 @@ const NewNavbar = () => {
           </div>
         </div>
 
-        {/* Desktop Dropdown Animated Wrapper */}
-        <div
-          className={`
-    overflow-hidden absolute top-16 left-0 right-0
-    bg-white/95 backdrop-blur-md border-b border-black z-40
-    transition-all duration-300 ease-in-out
-    ${activeDropdown ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"}
-  `}
-          onMouseEnter={() => showDropdown(activeDropdown)}
-          onMouseLeave={hideDropdown}
-        >
-          {/* Dropdown Inner Content */}
-          <div className="w-[70vw] mx-auto py-6 px-6 flex flex-wrap justify-center gap-4">
-            {activeDropdown === "services" &&
-              [
-                {
-                  to: "#Blockchain_Development",
-                  title: "Blockchain Development",
-                  color: "bg-yellow-100",
-                },
-                {
-                  to: "#AI_Development",
-                  title: "AI Development Services",
-                  color: "bg-purple-100",
-                },
-                {
-                  to: "#Game_Development",
-                  title: "Game Development",
-                  color: "bg-green-100",
-                },
-                {
-                  to: "#Crypto_Exchange",
-                  title: "Crypto Exchange Development",
-                  color: "bg-blue-100",
-                },
-                {
-                  to: "#Web3_Development",
-                  title: "Web3 Development",
-                  color: "bg-pink-100",
-                },
-                {
-                  to: "#Web_Design",
-                  title: "Web Design & Development",
-                  color: "bg-orange-100",
-                },
-                {
-                  to: "#Mobile_App_Development",
-                  title: "iOS & Android App Development",
-                  color: "bg-red-100",
-                },
-              ].map(({ to, title, color }, index) => (
-                <NewDropdownCard
-                  key={index}
-                  to={`/services/${to}`}
-                  title={title}
-                  bgColor={color}
-                />
-              ))}
-          </div>
-        </div>
-
         {/* Mobile Sidebar */}
         <>
           {/* Overlay */}
@@ -183,76 +117,13 @@ const NewNavbar = () => {
 
             {/* Navigation Links */}
             <nav className="flex flex-col gap-4 text-lg font-medium text-gray-800">
-              <div>
-                <button
-                  onClick={() =>
-                    setMobileDropdown((prev) =>
-                      prev === "services" ? null : "services"
-                    )
-                  }
+                <Link
+                to="/services"
                   className="w-full text-left hover:text-yellow-500"
                 >
                   Services
-                </button>
-                {/* Mobile Dropdown Content (Services) */}
-                <div
-                  className={`
-    pl-0 md:pl-4 mt-2 flex flex-col gap-3
-    overflow-hidden transition-all duration-300 ease-in-out
-    ${
-      mobileDropdown === "services"
-        ? "max-h-screen opacity-100 pt-3"
-        : "max-h-0 opacity-0"
-    }
-  `}
-                >
-                  {[
-                    {
-                      to: "#Blockchain_Development",
-                      title: "Blockchain Development",
-                      color: "bg-yellow-100",
-                    },
-                    {
-                      to: "#AI_Development",
-                      title: "AI Development Services",
-                      color: "bg-purple-100",
-                    },
-                    {
-                      to: "#Game_Development",
-                      title: "Game Development",
-                      color: "bg-green-100",
-                    },
-                    {
-                      to: "#Crypto_Exchange",
-                      title: "Crypto Exchange Development",
-                      color: "bg-blue-100",
-                    },
-                    {
-                      to: "#Web3_Development",
-                      title: "Web3 Development",
-                      color: "bg-pink-100",
-                    },
-                    {
-                      to: "#Web_Design",
-                      title: "Web Design & Development",
-                      color: "bg-orange-100",
-                    },
-                    {
-                      to: "#Mobile_App_Development",
-                      title: "iOS & Android App Development",
-                      color: "bg-red-100",
-                    },
-                  ].map(({ to, title, color }, index) => (
-                    <NewDropdownCard
-                      key={index}
-                      to={to}
-                      title={title}
-                      bgColor={color}
-                      setIsSidebarOpen={setIsSidebarOpen}
-                    />
-                  ))}
-                </div>
-              </div>
+                </Link>
+                
 
               <Link to="/clients" onClick={() => setIsSidebarOpen(false)}>
                 Clients
