@@ -26,7 +26,6 @@ const Section3 = () => {
           end: "+=150%",
           toggleActions: "play none none reverse",
           pin: true,
-          //markers: true,
         },
       });
 
@@ -55,7 +54,6 @@ const Section3 = () => {
                 start: "top top",
                 end: "+=100%",
                 scrub: true,
-                //markers: true,
               },
             });
           },
@@ -66,7 +64,6 @@ const Section3 = () => {
           trigger: "#box2",
           start: "top top",
           toggleActions: "play none none reverse",
-          markers: "true",
         },
       });
 
