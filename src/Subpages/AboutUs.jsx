@@ -9,11 +9,10 @@ const AboutUs = () => {
           Welcome to <span className="text-blue-600">Daflitech</span>
         </h1>
         <p className="text-lg leading-relaxed text-gray-700">
-          We are committed to delivering innovative and tailored software solutions
-          that help businesses thrive in the digital era. From stunning website
-          design and ERP solutions to advanced Android applications, we empower
-          your business with tools for success.
-        </p>
+          At Daflitech, we are dedicated to delivering a wide range of innovative and tailored software solutions to help businesses thrive in the digital age. As the best software company, we specialize in Website Design, ensuring your online presence is both visually appealing and highly functional. Our Enterprise Resource Planning (ERP) solutions streamline business operations, allowing for increased efficiency and productivity. We also offer cutting-edge Android Application Development to give your business a competitive edge in the mobile-first world.
+          </p>
+          <p className="text-lg leading-relaxed text-gray-700 mt-6">Our unique offerings span the technological spectrum–from cutting-edge software development to transformative digital strategies. We don't just follow industry trends; we set them.</p>
+        <p className="text-lg leading-relaxed text-gray-700 mt-6">A lot has changed since we began, but our purpose has not. Cybage is more than a company; it's a dynamic force that propels businesses toward success:</p>
       </div>
 
       {/* Who We Are */}
@@ -25,10 +24,14 @@ const AboutUs = () => {
             cutting-edge software development to transformative digital strategies.
             We don't just follow industry trends; we set them.
           </p>
+          <p className="text-gray-700 leading-relaxed mb-4">A lot has changed since we began, but our purpose has not. Cybage is more than a company; it's a dynamic force that propels businesses toward success:
+
+</p>
+    
           <ul className="list-disc list-inside space-y-2 text-gray-600">
-            <li>Passionate about leading-edge innovation and transformation.</li>
-            <li>Dedicated to enhancing experiences for employees, clients, and society.</li>
-            <li>Inclusive and supportive of everyone we work with.</li>
+            <li>We're obsessively Passionate about leading-edge innovation and transformation.</li>
+            <li>We're courageously caring-striving to better the experience of our employees, clients,and society at large.</li>
+            <li>We're devotedly inclusive – regardless of who you are – you are welcomed, respected, and supported.</li>
           </ul>
         </div>
         <img

@@ -16,7 +16,7 @@ const HeroSection = () => {
           <div className="flex flex-col gap-4">
             <HeroTitle />
             <p className="text-gray-600 text-md md:text-lg max-w-xl">
-              Dafil Tech delivers next-gen blockchain solutions, AI-powered
+              Daflitech delivers next-gen blockchain solutions, AI-powered
               applications, and immersive digital experiences that help
               businesses scale with security and innovation.
             </p>

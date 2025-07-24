@@ -24,7 +24,7 @@ export const servicesData = [
     id:"AI_Development",
     title: "AI Development Services",
     description:
-      "Harness the power of Artificial Intelligence with BRT Multi Software. We provide innovative AI development services that help businesses automate tasks, enhance decision-making, and boost operational efficiency.",
+      "Harness the power of Artificial Intelligence with Daflitech Solutions. We provide innovative AI development services that help businesses automate tasks, enhance decision-making, and boost operational efficiency.",
     subpoints: [
       "AI-Powered Chatbots",
       "Machine Learning & Deep Learning Models",
@@ -37,7 +37,7 @@ export const servicesData = [
     id:"Game_Development",
     title: "Game Development",
     description:
-      "Transform your gaming concepts into immersive digital experiences with BRT Multi Software. We specialize in creating interactive, fun, and engaging games for mobile, PC, and AR/VR platforms.",
+      "Transform your gaming concepts into immersive digital experiences with Daflitech Solutions. We specialize in creating interactive, fun, and engaging games for mobile, PC, and AR/VR platforms.",
     subpoints: [
       "Mobile Game Development",
       "PC and Console Game Development",
@@ -50,7 +50,7 @@ export const servicesData = [
     id:"Crypto_Exchange",
     title: "Crypto Exchange Development",
     description:
-      "As pioneers in crypto exchange development, BRT Multi Software delivers reliable and secure platforms for cryptocurrency trading. We offer tailored solutions for creating high-performance exchanges, ensuring seamless and secure transactions for users.",
+      "As pioneers in crypto exchange development, Daflitech Solutions  delivers reliable and secure platforms for cryptocurrency trading. We offer tailored solutions for creating high-performance exchanges, ensuring seamless and secure transactions for users.",
     subpoints: [
       "Centralized Exchange Development",
       "Decentralized Exchange Development (DEX)",
@@ -63,7 +63,7 @@ export const servicesData = [
     id:"Web3_Development",
     title: "Web3 Development",
     description:
-      "As the internet evolves, BRT Multi Software empowers businesses to take advantage of Web3 technologies. We specialize in the development of decentralized applications, wallets, and exchanges that provide greater security, privacy, and control over user data.",
+      "As the internet evolves, Daflitech Solutions empowers businesses to take advantage of Web3 technologies. We specialize in the development of decentralized applications, wallets, and exchanges that provide greater security, privacy, and control over user data.",
     subpoints: [
       "Web3 Exchange Development",
       "Web3 Wallet Integration",
