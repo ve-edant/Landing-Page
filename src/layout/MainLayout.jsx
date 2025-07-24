@@ -4,7 +4,7 @@ import NewNavbar from "../components/NewNavbar";
 
 const MainLayout = ({ children }) => {
   return (
-    <div className="bg-white dark:bg-black text-black dark:text-white transition-colors duration-300 overflow-x-hidden min-h-[100%] w-[100%]">
+    <div className="bg-white text-black  transition-colors duration-300 overflow-x-hidden min-h-[100%] w-[100%]">
       <NewNavbar />
       <main className="pt-16">{children}</main>
       <Footer />

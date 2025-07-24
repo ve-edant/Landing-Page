@@ -9,8 +9,6 @@ const Services = () => {
       <HeroSection />
       <WhyChooseUs />
       <ServicesSection />
-      <section></section>
-      <section></section>
     </div>
   )
 }
