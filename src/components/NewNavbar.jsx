@@ -27,7 +27,6 @@ const NewNavbar = () => {
             <Link
               className="relative h-full w-full flex items-center justify-center cursor-pointer hover:text-pink-700"
               to="/services"
-              
             >
               Services
             </Link>
@@ -117,13 +116,13 @@ const NewNavbar = () => {
 
             {/* Navigation Links */}
             <nav className="flex flex-col gap-4 text-lg font-medium text-gray-800">
-                <Link
+              <Link
                 to="/services"
-                  className="w-full text-left hover:text-yellow-500"
-                >
-                  Services
-                </Link>
-                
+                onClick={() => setIsSidebarOpen(false)}
+                className="w-full text-left hover:text-yellow-500"
+              >
+                Services
+              </Link>
 
               <Link to="/clients" onClick={() => setIsSidebarOpen(false)}>
                 Clients
