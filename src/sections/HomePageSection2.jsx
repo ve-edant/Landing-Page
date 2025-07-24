@@ -14,7 +14,6 @@ const Section3 = () => {
   const copiesRef = useRef(null);
   const techPointsRef = useRef(null);
   const techBulletsRef = useRef(null);
-  const marketingPointsRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -57,35 +56,10 @@ const Section3 = () => {
           end: "+=100%",
           scrub: true,
           //markers: true,
-          onUpdate: (self) => {
-            // `progress` goes from 0 → 1 across the scroll range
-            // `self.progress === 1` means y has reached its final (0) position
-            if (self.progress === 1) {
-              gsap.set(techPointsRef.current, { display: "flex" });
-              gsap.from(techBulletsRef.current.children, {
-                opacity: 0,
-                x: -50,
-                stagger: 0.05,
-                duration: 0.2,
-                ease: "power1.out",
-              });
-            }
-          },
         },
       });
 
-      // Timeline 3: Box 3 scroll motion
-      gsap.to(marketingPointsRef.current, {
-        y: 0,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: techPointsRef.current,
-          start: "top 300%",
-          end: "+=100%", // start after box2 finishes
-          scrub: true,
-          markers: true,
-        },
-      });
+      gsap.to({},{})
     });
 
     return () => ctx.revert();
@@ -126,13 +100,13 @@ const Section3 = () => {
         <div
           ref={techPointsRef}
           id="box2"
-          className="absolute top-[64px] left-0 bg-[#f3f3f3] rounded-xl shadow-md p-8 h-[500px] translate-y-[200vh]"
+          className="flex flex-col md:ml-20 absolute bg-white top-[64px] left-0 h-[500px] w-full md:w-[500px] translate-y-[200vh]"
         >
-          <h2 className="text-xl font-bold mb-4">Technology</h2>
+          <h2 className="text-4xl font-bold mb-4">Technology</h2>
           <div
             ref={techBulletsRef}
             id="bullet2"
-            className="hidden flex-col gap-2"
+            className="flex-col gap-2"
           >
             <div>Web Development</div>
             <div>Softwares</div>
@@ -146,24 +120,6 @@ const Section3 = () => {
           </div>
         </div>
 
-        {/* <div
-          ref={marketingPointsRef}
-          id="box3"
-          className="absolute top-[64px] left-0 bg-[#ff0000] rounded-xl shadow-md p-8 h-[500px] translate-y-[100vh]"
-        >
-          <h2 className="text-xl font-bold mb-4">Marketing</h2>
-          <div id="bullet3" className="hidden flex-col gap-2">
-            <div>Branding</div>
-            <div>Brand Name</div>
-            <div>Brand Guidelines</div>
-            <div>Strategy</div>
-            <div>Digital Marketing</div>
-            <div>S.E.O.</div>
-          </div>
-          <div className="flex-1 flex md:hidden items-start justify-center relative pt-2">
-            <SpinnerComponent />
-          </div>
-        </div> */}
       </div>
       <div className="hidden md:flex-1 md:flex items-start justify-center relative pt-10">
         <div className="mt-10 w-4/5 h-[400px] bg-[#e0f7fa] rounded-2xl shadow-lg flex items-center justify-center">
