@@ -4,7 +4,7 @@ import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SpinnerComponent from "../components/SpinnerComponent";
-import BulletSpinner from "../components/bulletSpinner";
+import BulletSpinner from "../components/BulletSpinner";
 
 gsap.registerPlugin(ScrollTrigger);
 
