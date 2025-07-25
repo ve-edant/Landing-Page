@@ -48,10 +48,10 @@ const Home = () => {
       <ClientSection />
       <Section3 />
       <MeetTheFounder />
-      <div className="relative w-full h-[15vh] md:h-[30vh] lg:h-[35vh]">
+      <div className="relative w-full h-[30vh] md:h-[30vh] lg:h-[35vh]">
         <img
           src={homeBottom}
-          className="absolute bottom-0 right-0 w-[60%] sm:w-[40%] md:w-[30%] lg:w-[30%] object-contain"
+          className="absolute bottom-0 right-0 sm:w-[100%] md:w-[30%] lg:w-[30%] object-contain"
           alt="Decorative"
         />
       </div>

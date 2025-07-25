@@ -36,7 +36,7 @@ const MeetTheFounder = () => {
         <div className="flex-1 flex justify-center">
           <img
             src="/founder-image.png"
-            alt="prathamesh_pathane"
+            alt="prathamesh_patane"
             className="w-48 h-auto object-cover rounded-lg"
           />
         </div>
