@@ -17,7 +17,7 @@ const MeetTheFounder = () => {
           {/* Name and Description */}
           <h3 className="text-xl font-bold text-black mb-1">Prathamesh Patane</h3>
           <p className="text-gray-700 mb-2 text-sm">
-            Founder of Dafli Technologies.
+            Founder of Daflitech Technologies.
             <br />
             Blockchain expert.
           </p>

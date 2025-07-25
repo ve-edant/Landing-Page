@@ -3,26 +3,26 @@ import ClientSection from "../components/ClientSection";
 import Section3 from "../sections/Section3";
 import MeetTheFounder from "../sections/MeetTheFounder";
 import HeroAnimation from "../components/HeroAnimation";
+import homeBottom from "../assets/images/home-bottom.png";
 
 const Home = () => {
   return (
     <div className="relative min-h-screen w-full bg-white text-black ">
-      
       <div className=" relative max-w-screen-xl mx-auto md:mx-32 flex flex-col md:flex-row items-center justify-between px-4 py-3 md:py-6 gap-10">
         <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `
         linear-gradient(to right, #b4b4b4 1px, transparent 1px),
         linear-gradient(to bottom, #b4b4b4 1px, transparent 1px)
       `,
-          backgroundSize: "50px 50px",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%)",
-          maskImage:
-            "radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%)",
-        }}
-      />
+            backgroundSize: "50px 50px",
+            WebkitMaskImage:
+              "radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%)",
+            maskImage:
+              "radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%)",
+          }}
+        />
         {/* Left: Animation Placeholder */}
         <div
           id="animation"
@@ -48,7 +48,13 @@ const Home = () => {
       <ClientSection />
       <Section3 />
       <MeetTheFounder />
-
+      <div className="relative w-full h-[15vh] md:h-[30vh] lg:h-[35vh]">
+        <img
+          src={homeBottom}
+          className="absolute bottom-0 right-0 w-[60%] sm:w-[40%] md:w-[30%] lg:w-[30%] object-contain"
+          alt="Decorative"
+        />
+      </div>
     </div>
   );
 };

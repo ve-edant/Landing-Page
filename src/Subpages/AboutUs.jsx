@@ -6,10 +6,10 @@ const AboutUs = () => {
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-16 text-center max-w-4xl">
         <h1 className="text-sm md:text-md font-bold mb-6 text-gray-900">
-          Welcome to <span className="text-blue-600">Daflitech</span>
+          Welcome to <span className="text-blue-600">Daflitech Technologies</span>
         </h1>
         <p className="text-lg leading-relaxed text-gray-700">
-          At Daflitech, we are dedicated to delivering a wide range of innovative and tailored software solutions to help businesses thrive in the digital age. As the best software company, we specialize in Website Design, ensuring your online presence is both visually appealing and highly functional. Our Enterprise Resource Planning (ERP) solutions streamline business operations, allowing for increased efficiency and productivity. We also offer cutting-edge Android Application Development to give your business a competitive edge in the mobile-first world.
+          At Daflitech Technologies, we are dedicated to delivering a wide range of innovative and tailored software solutions to help businesses thrive in the digital age. As the best software company, we specialize in Website Design, ensuring your online presence is both visually appealing and highly functional. Our Enterprise Resource Planning (ERP) solutions streamline business operations, allowing for increased efficiency and productivity. We also offer cutting-edge Android Application Development to give your business a competitive edge in the mobile-first world.
           </p>
           <p className="text-lg leading-relaxed text-gray-700 mt-6">Our unique offerings span the technological spectrum–from cutting-edge software development to transformative digital strategies. We don't just follow industry trends; we set them.</p>
         <p className="text-lg leading-relaxed text-gray-700 mt-6">A lot has changed since we began, but our purpose has not. Cybage is more than a company; it's a dynamic force that propels businesses toward success:</p>

@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10">
         {/* Column 1: Logo + Social */}
         <div>
-          <h1 className="text-2xl font-bold mb-4">Dafli Technology</h1>
+          <h1 className="text-2xl font-bold mb-4">Daflitech Technologies</h1>
           <div className="flex space-x-4 text-xl mb-4">
             <FaFacebookF />
             <FaLinkedinIn />
@@ -22,7 +22,7 @@ const Footer = () => {
             <FaXTwitter />
           </div>
           <p className="text-sm">
-            © daflitechnology.
+            © daflitechtechnologies.
             <br />
             All rights reserved 2025
           </p>

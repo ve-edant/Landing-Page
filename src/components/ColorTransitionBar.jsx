@@ -28,7 +28,7 @@ export default function ColorTransitionBar() {
         start: "top 60%",
         toggleActions: "play none none reverse",
         onEnter: () => gsap.to(textEl, { color: "#fff", duration: 0.5 }),
-        onLeaveBack: () => gsap.to(textEl, { color: "#000", duration: 0.5 }),
+        onLeave: () => gsap.to(textEl, { color: "#000", duration: 0.5 }),
       },
     });
   }, []);
