@@ -1,41 +1,36 @@
-import React, { useRef } from "react";
 import { servicesData } from "../assets/services";
-import { useMediaQuery } from "react-responsive";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-import { useScrollToHash } from "../lib/useScrollHash";
+import ServicesCard from "../components/ServicesCard";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ServicesSection = () => {
-  useScrollToHash();
-  const serviceRef = useRef([]);
-  const isDesktop = useMediaQuery({ minWidth: "48rem" });
-
-  useGSAP(() => {
-    serviceRef.current.forEach((el) => {
-      if (!el) return;
-
-      gsap.from(el, {
-        y: 200,
-        opacity: 0,
-        duration: 1,
-        ease: "circ.out",
-        scrollTrigger: {
-          trigger: el,
-          start: "top 80%",
-          toggleActions: "play none none reverse",
-        },
-      });
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
 
   return (
+    <section className="py-12 bg-gray-50">
+        
+      <div className="container mx-auto px-4 space-y-12">
+        {servicesData.map((service, index) => (
+          <ServicesCard
+            id={service.id}
+            key={index}
+            title={service.title}
+            description={service.description}
+            subpoints={service.subpoints}
+            imageSrc={service.imageSrc}
+          />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default ServicesSection;
+
+// Old Services Section
+{
+  /*
     <div className="min-h-screen bg-white text-black rounded-t-4xl mx-auto px-4">
       {servicesData.map((service, index) => (
         <div
@@ -61,7 +56,7 @@ const ServicesSection = () => {
                 {service.subpoints.map((item, itemIndex) => (
                   <div key={`item-${item}-${itemIndex}`}>
                     <h3 className="flex">
-                      <span className="mr-12 text-lg font-bold text-black/30">
+                      <span className="mr-12 text-lg font-bold text-[#0000FF]/80 stroke-1 stroke-black">
                         0{itemIndex + 1}
                       </span>
                       {item}
@@ -76,27 +71,5 @@ const ServicesSection = () => {
           </div>
         </div>
       ))}
-    </div>
-  );
-};
-
-export default ServicesSection;
-
-// Old Services Section
-{
-  /* <section className="py-12 bg-gray-50">
-        
-      <div className="container mx-auto px-4 space-y-12">
-        {servicesData.map((service, index) => (
-          <ServicesCard
-            id={service.id}
-            key={index}
-            title={service.title}
-            description={service.description}
-            subpoints={service.subpoints}
-            imageSrc={service.imageSrc}
-          />
-        ))}
-      </div>
-    </section> */
+    </div> */
 }
