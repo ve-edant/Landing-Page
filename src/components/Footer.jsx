@@ -5,6 +5,7 @@ import {
   FaGlobe,
   FaXTwitter,
 } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -12,7 +13,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10">
         {/* Column 1: Logo + Social */}
         <div>
-          <h1 className="text-2xl font-bold mb-4">Dafil Tech</h1>
+          <h1 className="text-2xl font-bold mb-4">Dafli Technology</h1>
           <div className="flex space-x-4 text-xl mb-4">
             <FaFacebookF />
             <FaLinkedinIn />
@@ -21,7 +22,7 @@ const Footer = () => {
             <FaXTwitter />
           </div>
           <p className="text-sm">
-            © dafiltech.
+            © daflitechnology.
             <br />
             All rights reserved 2025
           </p>
@@ -29,28 +30,38 @@ const Footer = () => {
 
         {/* Column 2: Services */}
         <div>
-          <h2 className="font-semibold text-lg mb-4 text-gray-900">Services</h2>
+          <h2 className="font-semibold text-lg mb-4 text-gray-900 hover:text-black hover:translate-x-1 transition-all duration-200 cursor-pointer"><Link to={"/services"}>Services</Link></h2>
           <ul className="space-y-2 text-sm text-gray-600">
             <li className="hover:text-black hover:translate-x-1 transition-all duration-200 cursor-pointer">
-              Blockchain Development
+              <Link to={"/services#Blockchain_Development"}>
+                Blockchain Development
+              </Link>
             </li>
             <li className="hover:text-black hover:translate-x-1 transition-all duration-200 cursor-pointer">
-              AI Development Services
+              <Link to={"/services#AI_Development"}>
+                AI Development Services
+              </Link>
             </li>
             <li className="hover:text-black hover:translate-x-1 transition-all duration-200 cursor-pointer">
-              Game Development
+              <Link to={"/services#AI_Development"}>Game Development</Link>
             </li>
             <li className="hover:text-black hover:translate-x-1 transition-all duration-200 cursor-pointer">
-              Crypto Exchange Development
+              <Link to={"/services#AI_Development"}>
+                Crypto Exchange Development
+              </Link>
             </li>
             <li className="hover:text-black hover:translate-x-1 transition-all duration-200 cursor-pointer">
-              Web3 Development
+              <Link to={"/services#AI_Development"}>Web3 Development</Link>
             </li>
             <li className="hover:text-black hover:translate-x-1 transition-all duration-200 cursor-pointer">
-              Web Design & Development
+              <Link to={"/services#AI_Development"}>
+                Web Design & Development
+              </Link>
             </li>
             <li className="hover:text-black hover:translate-x-1 transition-all duration-200 cursor-pointer">
-              iOS & Android App Development
+              <Link to={"/services#AI_Development"}>
+                iOS & Android App Development
+              </Link>
             </li>
           </ul>
         </div>
@@ -61,7 +72,6 @@ const Footer = () => {
           <ul className="space-y-2 text-sm">
             <li>About Us</li>
             <li>Team</li>
-            <li>Career</li>
           </ul>
         </div>
 
@@ -69,7 +79,6 @@ const Footer = () => {
         <div>
           <h2 className="font-semibold text-lg mb-3">Quick Links</h2>
           <ul className="space-y-2 text-sm">
-            <li>Work</li>
             <li>Clients</li>
             <li>Knowledge</li>
             <li>Reach Us</li>

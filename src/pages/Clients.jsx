@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { logos } from "../assets/Logos";
 import { icons } from "../assets/Icons";
+import clientIllustration from "../assets/images/clients-illustration.jpeg";
 
 const domainItems = [
   { icon: icons.carIcon, title: "Automobiles" },
@@ -63,10 +64,10 @@ const Clients = () => {
       </h1>
 
       {/* Big Illustration Image */}
-      <div className="grid grid-cols-1 gap-6 mt-16">
+      <div className="grid grid-cols-1 gap-6 mt-2">
         <div className="bg-gray-100 p-8 rounded-3xl shadow-2xl max-w-5xl mx-auto">
           <img
-            src="/clients-illustration.jpeg"
+            src={clientIllustration}
             alt="Client Illustration"
             className="w-full h-auto rounded-xl object-cover"
           />
